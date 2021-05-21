@@ -1,0 +1,14 @@
+[
+    {
+        "label": "Send to nmap",
+        "template": "nmap -p ${new URL(data[1].props.href).hostname}"
+    },
+    {
+        "label": "Send to ffuf",
+        "template": "ffuf -w ~/wordlists/wordlist.txt -u ${data[1].props.href}/FUZZ -recursion"
+    },
+    {
+        "label": "Send to Arjun",
+        "template": "arjun -u ${data[1].props.href}"
+    }
+]

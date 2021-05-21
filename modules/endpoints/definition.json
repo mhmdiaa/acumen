@@ -1,0 +1,27 @@
+{
+    "metadata": {
+        "name": "endpoints",
+        "description": "Default ffuf JSON output",
+        "example_source": "ffuf -w /path/to/wordlist https://example.com/FUZZ"
+    },
+    "columns": [
+        {
+            "name": "url",
+            "label": "URL",
+            "is_url": true
+        },
+        {
+            "name": "length",
+            "label": "Length"
+        },
+        {
+            "name": "status",
+            "label": "Status"
+        },
+        {
+            "name": "redirectlocation",
+            "label": "Redirect Location",
+            "is_url": true
+        }
+    ]
+}

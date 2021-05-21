@@ -1,0 +1,44 @@
+import Table from "../../components/Table"
+
+function {{.Metadata.Name | Title}}Table() {
+  const columns = [ 
+    {
+        name: "rating",
+        label: "Rating",
+    },
+    {{ with .Columns }}
+    {{ range . }}
+    {
+      name: "{{.Name}}",
+      label: "{{.Label}}",
+      {{ if .IsURL}}
+      options: {
+        filter: false,
+        customBodyRender: (value, _tableMeta, _updateValue) => {
+          return (
+            <a href={value} target = "_blank" rel = "noopener noreferrer">{value}</a>
+          );
+        }
+      }, 
+      {{end}}
+    },
+    {{end}}
+    {{end}}
+  ];
+
+  return (
+    <Table
+      columns={columns}
+      title="{{.Metadata.Name}}"
+      api_url="http://127.0.0.1:8888/api/data"
+    />
+  )
+}
+
+export default {
+  routeProps: {
+      path: '/{{.Metadata.Name}}',
+      component: {{.Metadata.Name | Title}}Table,
+  },
+  name: '{{.Metadata.Name}}',
+};

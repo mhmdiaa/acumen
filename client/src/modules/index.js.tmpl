@@ -1,0 +1,12 @@
+{{ range .}}
+import {{. | Title}}Table from './{{.}}';
+{{ end }}
+
+
+let modules = [
+{{ range . }}
+    {{. | Title}}Table,
+{{ end }}
+]
+
+export default modules;
