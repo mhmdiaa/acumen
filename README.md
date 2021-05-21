@@ -1,4 +1,4 @@
-<img src="client/public/acumen.jpg" alt="acumen" width="200px"></a>
+<img src="client/public/acumen.jpg" alt="acumen" width="200px" align="center">
 
 A clean UI with a modular structure to enhance security researchers' ability to work with data.
 
